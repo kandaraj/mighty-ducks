@@ -1,11 +1,16 @@
 html {
-    font-size: 14px;
+    font-size: 12px;
   }
   @media (min-width: 768px) {
     html {
-      font-size: 24px;
+      font-size: 14px;
     }
   }
+  
+  .white {
+      color: white;
+  }
+
   
   .container {
     max-width: 960px;
@@ -23,4 +28,25 @@ html {
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
   
   .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
- 
+
+body {
+    background: #0398EC;
+    background: -webkit-linear-gradient(to right, #003DC0, #0398EC) ;
+    background: linear-gradient(to right, #003DC0, #0398EC);
+}
+
+.high-link {
+    height: 1.03%;	width: 9.36%;	color: #001CB0;	font-family: "Titillium Web";	
+    font-size: 16px;	font-weight: bold;	letter-spacing: 1px;	line-height: 14px;	
+    text-align: center;
+}
+
+.watt {
+    color: yellow;
+}
+
+.bolt {
+    position: absolute;
+    left: 200px;
+    right: 100px;
+}

@@ -14,30 +14,41 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </head>
   <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        
-      </nav>
-      
+    <div class="bg-white">  
+      <img src="images/main-lg.jpg">
     </div>
-
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-      <h1 class="display-4">WATTS UP AGL!</h1>
-      <p class="lead"></p>
-    </div>
-
+  
     <div class="container">
-      <div class="card-deck mb-3 text-center">
-   
-        <div class="card mb-4 box-shadow">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">My Watts</h4>
+      <br/>
+        <div class="row text-center">
+             
+          <div class="col-6 col-md">
+            <img src="images/Leaderboard.png">
+            <h5 class="white">LEADERBOARD</h5> 
           </div>
-          <div class="card-body">
-            <h1 class="display-4 result">$15 <small class="text-muted"></small></h1>
+          <div class="col-6 col-md">
+              <img src="images/Prize.png">
+            <h5 class="white">REDEEM PRIZES</h5> 
+          </div>
+          <div class="col-6 col-md">
+              <img src="images/How.png">
+            <h5 class="white">HOW TO EARN POINTS</h5> 
           </div>
         </div>
+
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-5 white">WATTS EARNED</h1>
+            <p class="lead">
+              <div class="display-4 white watt">5000</div>  
+            </p>
+          </div>
+      
+
+      <div class="text-center">
+   
+        <img class="bolt" src="images/lightning_outline_1x.png">
+
+        <img class="bolt" src="images/lightning_fill_1x.png">
          
       </div>
 
@@ -53,15 +64,33 @@
     <script>
        $( document ).ready(function() {
 
+        function animateNumber(newValue){
+          $('.watt').each(function() {
+            
+            if(newValue == $(this).text()) return;
+
+            $(this).prop('Counter', 0).animate({
+              Counter: newValue
+            }, {
+              duration: 2000,
+              easing: 'swing',
+              step: function(now) {
+                $(this).text(Math.ceil(now));
+              }
+            });
+          });
+        }
+
         function doPoll(){
           $.get( "https://mightyduckshackatongamify.azurewebsites.net/api/points/get?id=333", function( data ) {
-            console.log(data)
-            $( ".result" ).html( data.points );
+            animateNumber(data.points);
             setTimeout(doPoll,5000);
           });
         }
 
         doPoll();
+
+        
 
       });
     </script>
