@@ -50,3 +50,16 @@ body {
     left: 200px;
     right: 100px;
 }
+
+.bolt-container {
+    position: absolute;
+    left: 200px;
+    right: 100px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.bolt-container.fill {
+  bottom: 0;
+  height: 0%;
+}
