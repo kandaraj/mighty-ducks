@@ -45,12 +45,6 @@ body {
     color:red;
 }
 
-.bolt {
-    position: absolute;
-    left: 200px;
-    right: 100px;
-}
-
 .bolt-container {
     position: absolute;
     left: 200px;
@@ -59,7 +53,19 @@ body {
     height: 100%;
 }
 
-.bolt-container.fill {
-  bottom: 0;
-  height: 0%;
+.img-container {
+  position: absolute;
+}
+
+.glow {
+z-index: 1;
+}
+
+.fill {
+z-index: 2;
+
+}
+
+.outline {
+z-index: 3;
 }
